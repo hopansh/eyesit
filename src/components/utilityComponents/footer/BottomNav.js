@@ -7,7 +7,6 @@ import Home from "@material-ui/icons/Home";
 import NewReleases from "@material-ui/icons/NewReleases";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 function BottomNav() {
-  //   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   return (
     <BottomNavigation
@@ -16,8 +15,6 @@ function BottomNav() {
         setValue(newValue);
       }}
       showLabels
-      
-      // className={classes.root}
     >
       <BottomNavigationAction
         label="Home"

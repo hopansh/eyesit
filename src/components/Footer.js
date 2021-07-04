@@ -6,7 +6,9 @@ function Footer() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-  return <div>{matches ? <BottomNav/> : null}</div>;
+  return <div>
+      {matches ? <BottomNav /> : null}
+      </div>;
 }
 
 export default Footer;

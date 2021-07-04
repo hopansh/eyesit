@@ -9,19 +9,19 @@ import theme from "./components/Theme";
 const routes = [
   {
     path: "/",
-    component: <div>Home</div>,
+    component: <Body page={"Home"} />,
   },
   {
     path: "/trending",
-    component: <div>Trending</div>,
+    component: <Body page={"Trending"} />,
   },
   {
     path: "/latest",
-    component: <div>Latest</div>,
+    component: <Body page={"Latest"} />,
   },
   {
     path: "/contact",
-    component: <div>Contact</div>,
+    component: <Body page={"Contact"} />,
   },
 ];
 
@@ -32,10 +32,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header />
-        <Body />
-        <Footer />
+        <Header style={{ height: "9vh", width: "100vw" }} />
         <Switch>{routeComponents}</Switch>
+        <Footer style={{ height: "9vh", width: "100vw" }} />
       </BrowserRouter>
     </ThemeProvider>
   );

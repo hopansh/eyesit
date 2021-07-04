@@ -19,9 +19,22 @@ export default createMuiTheme({
       minWidth: 10,
     },
   },
-  //   tab: {
-  //     root: {
-  //       fontWeight: 300,
-  //     },
-  //   },
+  overrides: {
+    MuiBottomNavigation: {
+      root: {
+        justifyContent:"space-evenly",
+        alignItems:"center",
+        height:"9vh",
+      },
+    },
+    MuiBottomNavigationAction: {
+      root: {
+        padding:0,
+        color:"black",
+        "&$selected": {
+          color:"orange"
+        },
+      },
+    },
+  },
 });

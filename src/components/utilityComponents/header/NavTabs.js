@@ -4,14 +4,6 @@ import Tab from "@material-ui/core/Tab";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/styles";
 const useStyles = makeStyles((theme) => ({
-  logo: {
-    [theme.breakpoints.down("md")]: {
-      fontSize: "1.5rem",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1.2rem",
-    },
-  },
   tabContainer: {
     marginLeft: "auto",
   },
