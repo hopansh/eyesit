@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 function Header() {
   const classes = useStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <AppBar position="sticky" color="secondary">
@@ -33,7 +33,7 @@ function Header() {
           disableRipple
         >
           <Typography variant="h4" className={classes.logo}>
-            EYES-IT
+            Vista
           </Typography>
         </Button>
         {matches ? null : <NavTabs />}

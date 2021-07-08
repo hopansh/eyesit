@@ -2,8 +2,9 @@ import { createMuiTheme } from "@material-ui/core";
 export default createMuiTheme({
   palette: {
     primary: {
-      main: "#000000",
+      main: "#FFA62B",
     },
+
     secondary: {
       main: "#ffffff",
     },
@@ -22,17 +23,26 @@ export default createMuiTheme({
   overrides: {
     MuiBottomNavigation: {
       root: {
-        justifyContent:"space-evenly",
-        alignItems:"center",
-        height:"9vh",
+        width:"100%",
+        position: "absolute",
+        bottom: "0",
       },
     },
+    MuiCheckbox: {
+      colorPrimary: {
+        color: "#custom color",
+        "&$checked": {
+          color: "black",
+        },
+      },
+    },
+
     MuiBottomNavigationAction: {
       root: {
-        padding:0,
-        color:"black",
+        padding: 0,
+        color: "black",
         "&$selected": {
-          color:"orange"
+          color: "orange",
         },
       },
     },

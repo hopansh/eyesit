@@ -34,7 +34,7 @@ function App() {
       <BrowserRouter>
         <Header style={{ height: "9vh", width: "100vw" }} />
         <Switch>{routeComponents}</Switch>
-        <Footer style={{ height: "9vh", width: "100vw" }} />
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
