@@ -6,34 +6,37 @@ import { ThemeProvider } from "@material-ui/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import theme from "./components/Theme";
 
-const routes = [
-  {
-    path: "/",
-    component: <Body page={"Home"} />,
-  },
-  {
-    path: "/trending",
-    component: <Body page={"Trending"} />,
-  },
-  {
-    path: "/latest",
-    component: <Body page={"Latest"} />,
-  },
-  {
-    path: "/contact",
-    component: <Body page={"Contact"} />,
-  },
-];
+// const routes = [
+//   {
+//     path: "/",
+//     component: <Body page={"Home"} />,
+//   },
+//   {
+//     path: "/trending",
+//     component: <Body page={"Trending"} />,
+//   },
+//   {
+//     path: "/latest",
+//     component: <Body page={"Latest"} />,
+//   },
+//   {
+//     path: "/contact",
+//     component: <Body page={"Contact"} />,
+//   },
+// ];
 
 function App() {
-  const routeComponents = routes.map(({ path, component }, key) => (
-    <Route exact path={path} component={() => component} key={key} />
-  ));
+  // const routeComponents = routes.map(({ path, component }, key) => (
+  //   <Route exact path={path} component={() => component} key={key} />
+  // ));
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header style={{ height: "9vh", width: "100vw" }} />
-        <Switch>{routeComponents}</Switch>
+        <Switch>
+          {/* {routeComponents} */}
+          <Route path={"/"} component={()=> <Body/>} />
+          </Switch>
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
