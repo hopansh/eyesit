@@ -1,7 +1,7 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import Footer from "../../Footer"
-
+import { useDispatch } from "react-redux";
 const useStyles = makeStyles((theme) => ({
   root: {
     // position:"block",
@@ -27,6 +27,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 function PageHeader({ name, image }) {
   const classes = useStyles();
+  const dispatch = useDispatch()
+  React.useEffect(()=>{
+    dispatch({
+      type:"SHOW_NAV",
+      payload:true,
+    })
+  },[])
   return (
       <React.Fragment>
     <div className={classes.root}>

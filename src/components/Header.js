@@ -11,6 +11,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { useDispatch } from "react-redux";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import { useSelector } from "react-redux";
 const useStyles = makeStyles((theme) => ({
   logo: {
     [theme.breakpoints.down("md")]: {
@@ -37,6 +38,7 @@ function Header() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const [value, setValue] = React.useState(0);
+  const showNav = useSelector((state) => state.showNav);
   const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
     dispatch({
@@ -52,14 +54,14 @@ function Header() {
         <Button
           component={Link}
           to="/"
-          onClick={() => handleChange({target:{outerText:"HOME"}},0)}
+          onClick={() => handleChange({ target: { outerText: "HOME" } }, 0)}
           disableRipple
         >
           <Typography variant="h4" className={classes.logo}>
             Vista
           </Typography>
         </Button>
-        {matches ? null : (
+        {matches ? null : !showNav ? null : (
           <Tabs
             variant="scrollable"
             className={classes.tabContainer}
@@ -72,8 +74,12 @@ function Header() {
             <Tab className={classes.tab} label="Latest" />
           </Tabs>
         )}
-        <IconButton component={Link} to="/contact" style={{marginLeft:"auto"}}>
-        <AccountCircle></AccountCircle>
+        <IconButton
+          component={Link}
+          to="/contact"
+          style={{ marginLeft: "auto" }}
+        >
+          <AccountCircle></AccountCircle>
         </IconButton>
       </Toolbar>
     </AppBar>

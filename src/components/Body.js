@@ -30,7 +30,6 @@ function Body() {
   return (
     <div className={classes.root}>
       <div>{getbody(page)}</div>
-      
     </div>
   );
 }
