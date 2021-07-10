@@ -5,11 +5,12 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/styles";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
-import { useMediaQuery } from "@material-ui/core";
+import { IconButton, useMediaQuery } from "@material-ui/core";
 import { useTheme } from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { useDispatch } from "react-redux";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 const useStyles = makeStyles((theme) => ({
   logo: {
     [theme.breakpoints.down("md")]: {
@@ -69,9 +70,11 @@ function Header() {
             <Tab className={classes.tab} label="Home" />
             <Tab className={classes.tab} label="Trending" />
             <Tab className={classes.tab} label="Latest" />
-            <Tab className={classes.tab} label="Contact" />
           </Tabs>
         )}
+        <IconButton component={Link} to="/contact" style={{marginLeft:"auto"}}>
+        <AccountCircle></AccountCircle>
+        </IconButton>
       </Toolbar>
     </AppBar>
   );

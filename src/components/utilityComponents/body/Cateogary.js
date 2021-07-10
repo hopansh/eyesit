@@ -16,6 +16,8 @@ import Pic3 from "../../../assets/Street_1.jpg";
 import Pic4 from "../../../assets/Nature_1.jpg";
 import Pic5 from "../../../assets/BW_1.jpg";
 
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   grid: {
     width: "100%",
@@ -36,28 +38,46 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     padding: "1rem 0.8rem 0rem 0.8rem",
+    minHeight: "6rem",
   },
 }));
 const items = [
   {
     name: "Portraits",
     src: Pic1,
+    quotes: " “A mans manners are a mirror in which he shows his portrait.”",
+    author: "Johann Wolfgang von Goethe",
+    path: "/portraits",
   },
   {
     name: "Landscapes",
     src: Pic2,
+    quotes:
+      '"The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."',
+    author: "Marcel Proust",
+    path: "/landscapes",
   },
   {
     name: "Street",
     src: Pic3,
+    quotes: '"Failure is a detour, not a dead-end street."',
+    author: "Zig Ziglar",
+    path: "/street",
   },
   {
     name: "Nature",
     src: Pic4,
+    quotes: '"Simplicity is natures first step, and the last of art."',
+    author: "Philip James Bailey",
+    path: "/nature",
   },
   {
     name: "Black&White",
     src: Pic5,
+    quotes:
+      '"Black and white creates a strange dreamscape that color never can."',
+    author: "Jack Antonoff",
+    path: "/blackandwhite",
   },
 ];
 export default function Cateogary() {
@@ -68,7 +88,7 @@ export default function Cateogary() {
     <Grid
       className={classes.grid}
       container
-      spacing={matches?4:6}
+      spacing={matches ? 4 : 6}
       direction="row"
       justifycontent="center"
       alignItems="center"
@@ -79,6 +99,8 @@ export default function Cateogary() {
             <Paper className={classes.root} elevation={0}>
               <CardActionArea>
                 <CardMedia
+                  component={Link}
+                  to={value.path}
                   className={classes.media}
                   image={value.src}
                   title="Contemplative Reptile"
@@ -88,13 +110,20 @@ export default function Cateogary() {
                     {value.name}
                   </Typography>
                   <Typography variant="body1" color="textSecondary">
-                    “A mans manners are a mirror in which he shows his
-                    portrait.”
+                    {value.quotes}
+                  </Typography>
+                  <Typography variant="caption" color="textSecondary">
+                    --- {value.author}
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                  size="small"
+                  color="primary"
+                  component={Link}
+                  to={value.path}
+                >
                   Show More
                 </Button>
               </CardActions>

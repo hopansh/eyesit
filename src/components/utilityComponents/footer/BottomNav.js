@@ -1,7 +1,6 @@
 import React from "react";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import Home from "@material-ui/icons/Home";
 import NewReleases from "@material-ui/icons/NewReleases";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
@@ -42,7 +41,6 @@ function BottomNav() {
       <BottomNavigationAction label="Home" icon={<Home />} />
       <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
       <BottomNavigationAction label="Latest" icon={<NewReleases />} />
-      <BottomNavigationAction label="Contact" icon={<AccountCircle />} />
     </BottomNavigation>
   );
 }

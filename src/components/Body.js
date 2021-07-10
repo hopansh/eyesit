@@ -3,13 +3,12 @@ import { makeStyles } from "@material-ui/core";
 import Home from "../views/Home";
 import Trending from "../views/Trending";
 import Latest from "../views/Latest";
-import Contact from "../views/Contact";
 import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
    width:"100%",
-   height:"82vh",
+   height:"91vh",
    overflowY:"scroll"
   },
 }));
@@ -21,8 +20,6 @@ const getbody = (page) => {
       return <Trending />;
     case "LATEST":
       return <Latest />;
-    case "CONTACT":
-      return <Contact />;
     default:
       return <Home />;
   }
@@ -33,6 +30,7 @@ function Body() {
   return (
     <div className={classes.root}>
       <div>{getbody(page)}</div>
+      
     </div>
   );
 }
