@@ -1,10 +1,9 @@
 import React from 'react'
-import HeaderCrousel from "../components/utilityComponents/body/HeaderCrousel"
+import Cateogary from '../components/utilityComponents/body/Cateogary'
 function Home() {
     return (
         <div>
-            <HeaderCrousel/>
-            This is a home page
+            <Cateogary/>
         </div>
     )
 }

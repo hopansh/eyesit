@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import Cateogary from "./utilityComponents/body/Cateogary";
 import Home from "../views/Home";
 import Trending from "../views/Trending";
 import Latest from "../views/Latest";
@@ -9,7 +8,9 @@ import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-   
+   width:"100%",
+   height:"82vh",
+   overflowY:"scroll"
   },
 }));
 const getbody = (page) => {
@@ -31,7 +32,6 @@ function Body() {
   const page = useSelector(state => state.page)
   return (
     <div className={classes.root}>
-      {page==="CONTACT"?null:<Cateogary />}
       <div>{getbody(page)}</div>
     </div>
   );

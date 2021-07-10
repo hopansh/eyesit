@@ -44,7 +44,7 @@ function Item(props) {
     <Paper>
       <img
         src={props.item.src}
-        alt="Image Here"
+        alt="Loading Here"
         style={{ height: "45vh", width: "100vw", objectFit: "cover" }}
       />
       <Typography variant="h5" align="center">

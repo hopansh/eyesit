@@ -1,5 +1,5 @@
 const initialState = {
-  page: "Home",
+  page: "HOME",
 };
 
 function reducer(state = initialState, action) {
