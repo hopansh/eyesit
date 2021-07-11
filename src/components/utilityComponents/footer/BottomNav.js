@@ -9,26 +9,24 @@ function BottomNav() {
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch();
   const handleChange = (event, newValue) => {
-    let page = "HOME";
+    let show = "all";
     switch (newValue) {
       case 0:
-        page = "HOME";
+        show = "all";
         break;
       case 1:
-        page = "TRENDING";
+        show = "trending";
         break;
       case 2:
-        page = "LATEST";
-        break;
-      case 3:
-        page = "CONTACT";
+        show = "latest";
         break;
       default:
+        show = "all";
         break;
     }
     dispatch({
-      type: "PAGE",
-      payload: page,
+      type: "SHOW",
+      payload: show,
     });
     setValue(newValue);
   };
@@ -38,7 +36,7 @@ function BottomNav() {
       onChange={(event, newValue) => handleChange(event, newValue)}
       showLabels
     >
-      <BottomNavigationAction label="Home" icon={<Home />} />
+      <BottomNavigationAction label="All" icon={<Home />} />
       <BottomNavigationAction label="Trending" icon={<WhatshotIcon />} />
       <BottomNavigationAction label="Latest" icon={<NewReleases />} />
     </BottomNavigation>

@@ -11,6 +11,7 @@ import Nature from "./views/Nature";
 import Portraits from "./views/Portraits";
 import "./App.css";
 import Contact from "./views/Contact";
+import Admin from "./views/Admin";
 
 const routes = [
   {
@@ -40,6 +41,10 @@ const routes = [
   {
     path: "/portraits",
     component: <Portraits />,
+  },
+  {
+    path: "/admin",
+    component: <Admin />,
   },
 ];
 
